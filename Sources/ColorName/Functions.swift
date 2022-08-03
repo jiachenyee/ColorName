@@ -22,9 +22,9 @@ public func getName(for color: CGColor) -> String {
     
     for colorName in colorNames {
         
-        let redDifference = abs(Int(colorName.red)! - red)
-        let greenDifference = abs(Int(colorName.green)! - green)
-        let blueDifference = abs(Int(colorName.blue)! - blue)
+        let redDifference = abs(colorName.red - red)
+        let greenDifference = abs(colorName.green - green)
+        let blueDifference = abs(colorName.blue - blue)
         
         let distance = redDifference + greenDifference + blueDifference
         
@@ -40,19 +40,18 @@ public func getName(for color: CGColor) -> String {
     return selectedColor.name
 }
 
+#if canImport(UIKit)
+import UIKit
+
 #if canImport(SwiftUI)
 import SwiftUI
 
-@available(macOS 11, *)
 @available(iOS 14.0, *)
 public func getName(for color: Color) -> String {
-    getName(for: color.cgColor!)
+    getName(for: UIColor(color))
 }
 
 #endif
-
-#if canImport(UIKit)
-import UIKit
 
 public func getName(for color: UIColor) -> String {
     getName(for: color.cgColor)
