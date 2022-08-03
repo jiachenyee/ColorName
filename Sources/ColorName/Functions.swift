@@ -15,7 +15,7 @@ public func getName(for color: CGColor) -> String {
     let green = Int(colorComponents[1] * 255)
     let blue = Int(colorComponents[2] * 255)
     
-    let colorNames = readFromFile()
+    let colorNames = ColorName.colors
     
     var selectedColor = colorNames[0]
     var priorDistance = Int.max
@@ -57,13 +57,3 @@ public func getName(for color: UIColor) -> String {
     getName(for: color.cgColor)
 }
 #endif
-
-func readFromFile() -> [ColorName] {
-    let decoder = JSONDecoder()
-    
-    let bundleURL = Bundle.main.url(forResource: "data", withExtension: "json")
-    
-    let decodedData = try? decoder.decode([ColorName].self, from: Data(contentsOf: bundleURL!))
-    
-    return decodedData!
-}
