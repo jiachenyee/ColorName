@@ -8,7 +8,7 @@
 import Foundation
 import CoreGraphics
 
-func getName(for color: CGColor) -> String {
+public func getName(for color: CGColor) -> String {
     guard let colorComponents = color.components else { fatalError("Could not find color components") }
     
     let red = Int(colorComponents[0] * 255)
@@ -45,7 +45,7 @@ import SwiftUI
 
 @available(macOS 11, *)
 @available(iOS 14.0, *)
-func getName(for color: Color) -> String {
+public func getName(for color: Color) -> String {
     getName(for: color.cgColor!)
 }
 
@@ -54,7 +54,7 @@ func getName(for color: Color) -> String {
 #if canImport(UIKit)
 import UIKit
 
-func getName(for color: UIColor) -> String {
+public func getName(for color: UIColor) -> String {
     getName(for: color.cgColor)
 }
 #endif
