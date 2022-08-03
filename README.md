@@ -1,6 +1,10 @@
 # ColorName
 
 ## Usage
+```swift
+import ColorName
+```
+
 ### SwiftUI
 ```swift
 let myColorName = getName(for: Color.red)
