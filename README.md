@@ -21,7 +21,7 @@ print(myColorName)
 
 ## Data
 
-[JSON Data](Sources/ColorName/data.json)
+[JSON Data](Sources/ColorName/ColorName.swift)
 
 - [Wikipedia List of Colors: A–F](https://en.wikipedia.org/wiki/List_of_colors:_A–F)
 - [Wikipedia List of Colors: G–M](https://en.wikipedia.org/wiki/List_of_colors:_G–M)
